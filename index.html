@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,13 +9,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <!-- Animated background -->
     <div class="background-blobs">
         <div class="blob top-left"></div>
         <div class="blob bottom-right"></div>
     </div>
-    
+
     <div class="container">
         <header>
             <h1>QPred <span class="badge">v1.0</span></h1>
@@ -41,7 +43,7 @@
             <!-- Loading State -->
             <div id="loading" class="hidden">
                 <div class="spinner"></div>
-                <p>Analyzing molecular structure with PyTorch Geometric...</p>
+                <p>Analyzing molecular structure...</p>
             </div>
 
             <!-- Error State -->
@@ -66,8 +68,9 @@
                 </div>
             </div>
         </main>
-        
-        <footer style="text-align: center; padding-top: 1.5rem; padding-bottom: 1rem; color: rgba(255, 255, 255, 0.5); font-size: 0.85rem; letter-spacing: 0.5px;">
+
+        <footer
+            style="text-align: center; padding-top: 1.5rem; padding-bottom: 1rem; color: rgba(255, 255, 255, 0.5); font-size: 0.85rem; letter-spacing: 0.5px;">
             <p>Powered by Hybrid 2D + 3D Molecular GNN</p>
         </footer>
     </div>
@@ -75,4 +78,5 @@
     <!-- Logic -->
     <script src="script.js"></script>
 </body>
+
 </html>
