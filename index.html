@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QPred - Molecular Property Prediction</title>
+    <!-- Modern dynamic font: Outfit -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Animated background -->
+    <div class="background-blobs">
+        <div class="blob top-left"></div>
+        <div class="blob bottom-right"></div>
+    </div>
+    
+    <div class="container">
+        <header>
+            <h1>QPred <span class="badge">v1.0</span></h1>
+            <p>Next-Gen GNN Molecular Property Prediction</p>
+        </header>
+
+        <main>
+            <!-- Input Section -->
+            <div class="glass-card input-section">
+                <label for="smiles-input">Enter SMILES String</label>
+                <div class="input-group">
+                    <input type="text" id="smiles-input" placeholder="e.g. CC(=O)O, c1ccccc1, CCO" value="c1ccccc1">
+                    <button id="predict-btn" class="glow-on-hover">Predict</button>
+                </div>
+                <!-- Quick examples -->
+                <div class="examples">
+                    <span>Try:</span>
+                    <button class="example-btn">C</button>
+                    <button class="example-btn">CCO</button>
+                    <button class="example-btn">CC(=O)O</button>
+                </div>
+            </div>
+
+            <!-- Loading State -->
+            <div id="loading" class="hidden">
+                <div class="spinner"></div>
+                <p>Analyzing molecular structure with PyTorch Geometric...</p>
+            </div>
+
+            <!-- Error State -->
+            <div id="error-msg" class="hidden error"></div>
+
+            <!-- Result Section -->
+            <div class="glass-card result-section hidden" id="result-card">
+                <div class="result-header">
+                    <h2>Analysis Results</h2>
+                </div>
+                <div class="result-content">
+                    <div class="mol-visualizer">
+                        <!-- RDKit generated image will be placed here -->
+                        <img id="mol-image" src="" alt="Molecule 2D Structure">
+                    </div>
+                    <div class="prediction-data">
+                        <span class="prediction-label">Predicted Dipole Moment (μ)</span>
+                        <div class="prediction-value-wrap">
+                            <span id="prediction-value" class="gradient-text">0.00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <footer style="text-align: center; padding-top: 1.5rem; padding-bottom: 1rem; color: rgba(255, 255, 255, 0.5); font-size: 0.85rem; letter-spacing: 0.5px;">
+            <p>Powered by Hybrid 2D + 3D Molecular GNN</p>
+        </footer>
+    </div>
+
+    <!-- Logic -->
+    <script src="script.js"></script>
+</body>
+</html>
